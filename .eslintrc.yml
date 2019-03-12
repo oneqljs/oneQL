@@ -1,0 +1,7 @@
+extends:
+  - standard
+  - plugin:prettier/recommended
+rules:
+  camelcase: 0
+  no-extra-boolean-cast: 0
+  no-unused-expressions: 0
