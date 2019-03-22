@@ -1,6 +1,7 @@
 oneQL
 --------
 Use koa + apollo-server-koa
+book: (https://skyweaver213.github.io/oneQL/book/)
 
 快速开始
 ---------
