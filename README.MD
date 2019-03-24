@@ -81,7 +81,6 @@ const server = new ApolloServer({
 ![avatar](./doc/oneQL.png)
 
 
-
 [npm]: https://img.shields.io/npm/v/oneql.svg
 [npm-url]: https://npmjs.com/package/oneql
 
