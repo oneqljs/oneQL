@@ -1,6 +1,6 @@
 {
-  "name": "tte",
-  "version": "1.0.0",
+  "name": "oneQL",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -58,5 +58,9 @@
     "prettier": "^1.16.4",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.3333"
+  },
+  "engines": {
+    "npm": ">=6",
+    "node": ">=8.9.4"
   }
 }
