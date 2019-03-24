@@ -3,6 +3,9 @@ oneQL
 Use koa + apollo-server-koa <br/>
 book: (https://skyweaver213.github.io/oneQL/book/)
 
+[![npm][npm]][npm-url]
+[![node][node]][node-url]
+
 快速开始
 ---------
 - clone模板仓库 (后续考虑cli创建)
@@ -76,3 +79,11 @@ const server = new ApolloServer({
 思维图
 --------
 ![avatar](./doc/oneQL.png)
+
+
+
+[npm]: https://img.shields.io/npm/v/oneql.svg
+[npm-url]: https://npmjs.com/package/oneql
+
+[node]: https://img.shields.io/node/v/oneql.svg
+[node-url]: https://nodejs.org
