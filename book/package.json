@@ -1,0 +1,28 @@
+{
+  "name": "oneql-book",
+  "version": "1.0.0",
+  "description": "oneQL -------- Use koa + apollo-server-koa <br/> book: (https://skyweaver213.github.io/oneQL/book/)",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "gitbook-plugin-prism": "^2.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "gitbook serve",
+    "build": "gitbook build . book",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyweaver213/oneQL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyweaver213/oneQL/issues"
+  },
+  "homepage": "https://github.com/skyweaver213/oneQL#readme"
+}
