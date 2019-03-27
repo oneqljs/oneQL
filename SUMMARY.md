@@ -2,7 +2,7 @@
 
 * [新手指南](README.md)
     * [oneQL 是什么？](guide/intro.md)
-    * [oneQL 快速入门](guide/start.md)
+    * [oneQL 快速入门](guide/quickstart.md)
     * [oneQL 推荐实践](guide/recommend.md)
 * [基础功能](functional/index.md)
     * [目录结构](functional/xconfig.md)
