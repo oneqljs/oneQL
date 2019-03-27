@@ -1,7 +1,8 @@
 oneQL
 -----
 
-oneQL是一个建筑在koa, apollo-server-koa的企业级graphql解决方案。<br />
+oneQL是一个为BFF（Backend For Frontend 服务于前端的后端）而生的框架。 <br/>
+建筑在koa, apollo-server-koa之上的企业级graphql解决方案。<br />
 小至目录结构, 代码规范, 大至框架配套, 日常维护, 项目扩展 思考整个开发流程。<br />
 我们希望基于oneQL之上衍生出更多贴切团队开发场景的上层框架, 真正提高开发效率。 
 
