@@ -5,7 +5,7 @@
     * [oneQL 快速入门](guide/quickstart.md)
     * [oneQL 推荐实践](guide/recommend.md)
 * [基础功能](functional/index.md)
-    * [目录结构](functional/xconfig.md)
+    * [目录结构](functional/dirtree.md)
     * [运行环境](functional/xlog.md)
     * [配置](functional/redis.md)
     * [中间件](functional/redis.md)
