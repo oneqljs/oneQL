@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>oneQL 快速入门 · GitBook</title>
+        <title>配置 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="recommend.html" />
+    <link rel="next" href="middleware.html" />
     
     
-    <link rel="prev" href="intro.html" />
+    <link rel="prev" href="env.html" />
     
 
     </head>
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="intro.html">
+        <li class="chapter " data-level="1.2.1" data-path="../guide/intro.html">
             
-                <a href="intro.html">
+                <a href="../guide/intro.html">
             
                     
                     oneQL 是什么？
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="quickstart.html">
+        <li class="chapter " data-level="1.2.2" data-path="../guide/quickstart.html">
             
-                <a href="quickstart.html">
+                <a href="../guide/quickstart.html">
             
                     
                     oneQL 快速入门
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="recommend.html">
+        <li class="chapter " data-level="1.2.3" data-path="../guide/recommend.html">
             
-                <a href="recommend.html">
+                <a href="../guide/recommend.html">
             
                     
                     oneQL 推荐实践
@@ -174,9 +174,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../functional/dirtree.html">
+        <li class="chapter " data-level="1.3.1" data-path="dirtree.html">
             
-                <a href="../functional/dirtree.html">
+                <a href="dirtree.html">
             
                     
                     目录结构
@@ -187,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../functional/env.html">
+        <li class="chapter " data-level="1.3.2" data-path="env.html">
             
-                <a href="../functional/env.html">
+                <a href="env.html">
             
                     
                     运行环境
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../functional/config.html">
+        <li class="chapter active" data-level="1.3.3" data-path="config.html">
             
-                <a href="../functional/config.html">
+                <a href="config.html">
             
                     
                     配置
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../functional/middleware.html">
+        <li class="chapter " data-level="1.3.4" data-path="middleware.html">
             
-                <a href="../functional/middleware.html">
+                <a href="middleware.html">
             
                     
                     中间件
@@ -226,9 +226,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../functional/schedule.html">
+        <li class="chapter " data-level="1.3.5" data-path="schedule.html">
             
-                <a href="../functional/schedule.html">
+                <a href="schedule.html">
             
                     
                     定时任务
@@ -583,7 +583,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >oneQL 快速入门</a>
+        <a href=".." >配置</a>
     </h1>
 </div>
 
@@ -598,38 +598,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x5FEB;&#x901F;&#x5F00;&#x59CB;">&#x5FEB;&#x901F;&#x5F00;&#x59CB;</h2>
-<pre class="language-"><code class="lang-sh"><span class="token comment"># step 1</span>
-<span class="token function">git</span> clone git@github.com:skyweaver213/oneQL.git
+                                <h2 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h2>
+<p>app.config.js&#x91CC;&#x5EFA;&#x8BAE;&#x53EA;&#x5B58;&#x653E;&#x7684;&#x662F;&#x5E94;&#x7528;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x9879;</p>
+<p>config&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5EFA;&#x8BAE;&#x5B58;&#x653E;&#x548C;&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x9879;</p>
+<p>&#x914D;&#x7F6E;&#x9879;&#x4F1A;&#x81EA;&#x52A8;&#x5408;&#x62FC;&#xFF0C; &#x4F18;&#x5148;&#x7EA7;: app.config.js &lt; config.default.js &lt; config.${env}.js</p>
 
-<span class="token comment"># step 2</span>
-<span class="token function">npm</span> <span class="token function">install</span>
 
-<span class="token comment">#step 3</span>
-<span class="token function">npm</span> run dev
+<h3 id="&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;</h3>
+<p>oneQL&#x4F1A;&#x6839;&#x636E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x52A0;&#x8F7D;&#x4E0D;&#x540C;&#x7684;config&#x914D;&#x7F6E;&#x6587;&#x4EF6;, config.default.js &#x662F;&#x6BCF;&#x4E2A;&#x73AF;&#x5883;&#x90FD;&#x52A0;&#x8F7D;&#x7684;&#x6587;&#x4EF6;; &#x5982;&#x679C;&#x5B58;&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x53EF;&#x81EA;&#x884C;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x7684;config.${env}.js &#x6587;&#x4EF6;&#x3002;</p>
+
+<pre class="language-"><code class="lang-sh">config
+&#x251C;&#x2500;&#x2500; config.default.js
+&#x251C;&#x2500;&#x2500; config.dev.js
+&#x251C;&#x2500;&#x2500; config.fat.js
+&#x2514;&#x2500;&#x2500; config.prod.js
 </code></pre>
-<p>&#x8BBF;&#x95EE;&#xFF1A;http://localhost:3600/graphql</p>
-
-<p>&#x8F93;&#x5165;&#x8BF7;&#x6C42;schema &#x548C; &#x67E5;&#x8BE2;&#x53D8;&#x91CF;, &#x70B9;&#x51FB;&#x8FD0;&#x884C;</p>
-
-<pre class="language-"><code class="lang-js">query <span class="token function">db</span><span class="token punctuation">(</span>$key<span class="token punctuation">:</span> String<span class="token punctuation">,</span> $ext<span class="token punctuation">:</span> <span class="token punctuation">[</span>ExtensionType<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  hello
-  <span class="token function">city</span><span class="token punctuation">(</span>request<span class="token punctuation">:</span> <span class="token punctuation">{</span>key<span class="token punctuation">:</span> $key<span class="token punctuation">,</span>  ext<span class="token punctuation">:</span> $ext <span class="token punctuation">}</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    datainfo<span class="token punctuation">{</span>
-      CountryId
-      country
-      type
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h5 id="query-variables">QUERY VARIABLES</h5>
-<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span><span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;D&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ext&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;value&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
-</code></pre>
-<p><img src="../doc/oneQL-example.png" alt="avatar"></p>
-<h2 id="&#x67E5;&#x770B;schema&#x8BE6;&#x60C5;">&#x67E5;&#x770B;Schema&#x8BE6;&#x60C5;</h2>
-<p>&#x6700;&#x53F3;&#x8FB9;&#x7EFF;&#x8272;&#x7684;SCHEMA &#x6309;&#x94AE;
-<img src="../doc/schema-detail.png" alt="avatar"></p>
 
                                 
                                 </section>
@@ -657,12 +640,12 @@
 
             
                 
-                <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page: oneQL 是什么？">
+                <a href="env.html" class="navigation navigation-prev " aria-label="Previous page: 运行环境">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="recommend.html" class="navigation navigation-next " aria-label="Next page: oneQL 推荐实践">
+                <a href="middleware.html" class="navigation navigation-next " aria-label="Next page: 中间件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -673,7 +656,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"oneQL 快速入门","level":"1.2.2","depth":2,"next":{"title":"oneQL 推荐实践","level":"1.2.3","depth":2,"path":"guide/recommend.md","ref":"guide/recommend.md","articles":[]},"previous":{"title":"oneQL 是什么？","level":"1.2.1","depth":2,"path":"guide/intro.md","ref":"guide/intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/quickstart.md","mtime":"2019-03-29T03:20:44.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-29T07:25:23.866Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.3.3","depth":2,"next":{"title":"中间件","level":"1.3.4","depth":2,"path":"functional/middleware.md","ref":"functional/middleware.md","articles":[]},"previous":{"title":"运行环境","level":"1.3.2","depth":2,"path":"functional/env.md","ref":"functional/env.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"functional/config.md","mtime":"2019-03-29T07:05:29.455Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-29T07:25:23.866Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

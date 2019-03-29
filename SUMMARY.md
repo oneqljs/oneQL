@@ -7,9 +7,9 @@
 * [基础功能]
     * [目录结构](functional/dirtree.md)
     * [运行环境](functional/env.md)
-    * [配置](functional/redis.md)
-    * [中间件](functional/redis.md)
-    * [定时任务](functional/redis.md)
+    * [配置](functional/config.md)
+    * [中间件](functional/middleware.md)
+    * [定时任务](functional/schedule.md)
 * [核心功能]
     * [本地开发](utils/dev.md)
     * [日志功能](utils/xconfig.md)
