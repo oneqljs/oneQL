@@ -13,6 +13,7 @@
   "scripts": {
     "start": "gitbook serve",
     "build": "gitbook build . book",
+    "publish": "npm run build && git add -A && git commit -m '[update] book' && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
