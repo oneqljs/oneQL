@@ -17,3 +17,32 @@ config
 ├── config.fat.js
 └── config.prod.js
 ```
+
+### app.config.js
+<p>配置说明，must是必须，其他可选</p>
+
+```sh
+{
+    port: 3600,      // 启动端口 , must
+    env: 'fat',      // dev, fat, pro  , must
+    vd: '',          // 服务器拦截的虚拟路径
+    graphqlPath: '', // graphql 拦截的路径
+    redisName: 'xxx',
+    xconfig: ['properties'],
+    // 'SOA.Timeout': 100 // soa全局的timeout，可被单独调用的timeout覆盖
+}
+```
+
+### config
+<p>项目、业务相关配置</p>
+
+```sh
+{
+    xLog: 'oneQL_project',
+    middleWare: {
+
+    },
+    clusterOpen: false,   // 是否开启多线程
+    forkNum: 2,     // fork数量, 如果大于服务器cpu.max数量，按max数量启动
+}
+```
