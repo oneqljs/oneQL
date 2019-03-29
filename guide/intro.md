@@ -1,5 +1,9 @@
 oneQL
 -----
+Use koa + apollo-server-koa <br/>
+
+[![npm][npm]][npm-url]
+[![node][node]][node-url]
 
 oneQL是一个为BFF（Backend For Frontend 服务于前端的后端）而生的框架。 <br/>
 建筑在koa, apollo-server-koa之上的企业级graphql解决方案。<br />
@@ -20,3 +24,10 @@ oneQL是一个为BFF（Backend For Frontend 服务于前端的后端）而生的
 oneQL默认支持了 typescript, commit代码前会有eslint和tslint校验。
 可自行添加自定义的规则(Todo 规则配置方法)。<br />
 commit代码前，会经过prettier 格式化，尽最大可能统一团队代码风格。
+
+
+[npm]: https://img.shields.io/npm/v/oneql.svg
+[npm-url]: https://npmjs.com/package/oneql
+
+[node]: https://img.shields.io/node/v/oneql.svg
+[node-url]: https://nodejs.org

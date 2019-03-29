@@ -1,16 +1,17 @@
 # OneQL
 
-* [新手指南](README.md)
+* [新手指南]
     * [oneQL 是什么？](guide/intro.md)
     * [oneQL 快速入门](guide/quickstart.md)
     * [oneQL 推荐实践](guide/recommend.md)
 * [基础功能](functional/index.md)
     * [目录结构](functional/dirtree.md)
-    * [运行环境](functional/xlog.md)
+    * [运行环境](functional/env.md)
     * [配置](functional/redis.md)
     * [中间件](functional/redis.md)
     * [定时任务](functional/redis.md)
 * [核心功能](utils/index.md)
+    * [本地开发](utils/dev.md)
     * [日志功能](utils/xconfig.md)
     * [接入配置系统](utils/xlog.md)
     * [缓存功能](utils/redis.md)

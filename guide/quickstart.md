@@ -1,11 +1,20 @@
 快速开始
 ------
 
-- clone模板仓库 (后续考虑cli创建)
-- npm install
-- npm run dev
+```sh
+# step 1
+git clone git@github.com:skyweaver213/oneQL.git
 
-- 访问：(http://localhost:3600/graphql)
+# step 2
+npm install
+
+#step 3
+npm run dev
+```
+
+<p>访问：http://localhost:3600/graphql</p>
+
+<p>输入请求schema 和 查询变量, 点击运行</p>
 
 ```js
 query db($key: String, $ext: [ExtensionType]){
@@ -27,9 +36,8 @@ query db($key: String, $ext: [ExtensionType]){
 
 ![avatar](../doc/oneQL-example.png)
 
-> 使用oneQL的同学，默认你对graphql有一定了解，如type 和schema之间的关系。
 
-查看接口Schema
+查看Schema详情
 ------
 最右边绿色的SCHEMA 按钮
 ![avatar](../doc/schema-detail.png)
