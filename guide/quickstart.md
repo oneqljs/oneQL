@@ -37,7 +37,7 @@ query db($key: String, $ext: [ExtensionType]){
 ![avatar](../doc/oneQL-example.png)
 
 
-查看Schema详情
-------
+#### 查看Schema详情
+
 最右边绿色的SCHEMA 按钮
 ![avatar](../doc/schema-detail.png)
