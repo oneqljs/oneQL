@@ -12,3 +12,4 @@ build/
 dist/
 release/
 tree.md
+examples/
