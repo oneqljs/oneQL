@@ -1,7 +1,7 @@
 oneQL
 --------
 Use koa + apollo-server-koa <br/>
-book: (https://skyweaver213.github.io/oneQL/book/)
+book: (https://oneqljs.github.io/oneQL/book/)
 
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
