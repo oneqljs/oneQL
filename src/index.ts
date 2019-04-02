@@ -16,7 +16,7 @@ const server = new ApolloServer({
   schema: makeExecutableSchema({
     typeDefs,
     // mocks
-    resolvers
+    resolvers,
   }),
   // playground: false
   context: async ({ ctx }: Koa.Context) => {
@@ -29,7 +29,9 @@ const server = new ApolloServer({
     } = cookie || {}
     return {
       token: cticket || auth || '',
-      head
+      head,
+      db: 'dbdbb',
+      ctx
     }
   }
 })
