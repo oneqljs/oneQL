@@ -1,8 +1,8 @@
 {
   "name": "oneql",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "start": "tsc && node  dist/src/index.js NODE_ENV=production",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -62,6 +62,12 @@
   },
   "engines": {
     "npm": ">=6",
-    "node": ">=8.9.4"
-  }
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "README.MD",
+    "bin",
+    "dist",
+    "util"
+  ]
 }

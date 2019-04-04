@@ -5,51 +5,57 @@ import * as cookie from 'koa-cookie'
 import { ApolloServer } from 'apollo-server-koa'
 import { makeExecutableSchema } from 'graphql-tools' // SchemaDirectiveVisitor
 import router from './router'
-import typeDefs from './types'
-import resolvers from './resolvers'
+// import typeDefs from './types'
+// import resolvers from './resolvers'
 // import { xconfigInit } from './util/xconfig'
 
 // 获取动态config，控制生产开关，配置 etc
 // xconfigInit()
 
-const server = new ApolloServer({
-  schema: makeExecutableSchema({
-    typeDefs,
-    // mocks
-    resolvers,
-  }),
-  // playground: false
-  context: async ({ ctx }: Koa.Context) => {
-    const { cookie, request } = ctx
-    const { body }: { body: { head } } = request || {}
-    const { head = {} } = body || {}
-    const { cticket, auth }: {
-      cticket?: String
-      auth?: String
-    } = cookie || {}
-    return {
-      token: cticket || auth || '',
-      head,
-      db: 'dbdbb',
-      ctx
-    }
-  }
-})
+let OneQL = (object) => {
+  let { schema, ...other } = object
 
-const app = new Koa()
+  const server = new ApolloServer({
+    schema: makeExecutableSchema(schema),
+    ...other
+    // // playground: false
+    // context: async ({ ctx }: Koa.Context) => {
+    //   const { cookie, request } = ctx
+    //   const { body }: { body: { head } } = request || {}
+    //   const { head = {} } = body || {}
+    //   const { cticket, auth }: {
+    //     cticket?: String
+    //     auth?: String
+    //   } = cookie || {}
+    //   return {
+    //     token: cticket || auth || '',
+    //     head,
+    //     db: 'dbdbb',
+    //     ctx
+    //   }
+    // }
+  })
 
-app
-  .use(cors({ credentials: true }))
-  .use(cookie.default())
-  .use(bodyParser())
-  .use(router.routes())
-  .use(router.allowedMethods())
+  const app = new Koa()
 
-server.applyMiddleware({ app })
+  app
+    .use(cors({ credentials: true }))
+    .use(cookie.default())
+    .use(bodyParser())
+    .use(router.routes())
+    .use(router.allowedMethods())
 
-const port = 3600
-const host = 'localhost'
+  server.applyMiddleware({ app })
 
-app.listen(port, host, () =>
-  console.log(`🚀 Server ready at http://${host}:${port}${server.graphqlPath}`)
-)
+  const port = 3600
+  const host = 'localhost'
+
+  app.listen(port, host, () =>
+    console.log(`🚀 Server ready at http://${host}:${port}${server.graphqlPath}`)
+  )
+
+
+}
+
+
+export default OneQL

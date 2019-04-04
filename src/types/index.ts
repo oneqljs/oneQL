@@ -1,11 +1,10 @@
-import { gql } from 'apollo-server-koa'
 
 // types
 import cityTypes from './city'
 import helloTypes from './hello'
 import seatSimpleTypes from './seatSimple'
 
-const baseSchema = gql`
+const baseSchema = `
   type Query {
     ONEQL: Boolean
   }

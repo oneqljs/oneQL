@@ -1,6 +1,4 @@
-import { gql } from 'apollo-server-koa'
-
-const simpleTypes = gql`
+const simpleTypes = `
   extend type Query {
     seatSimple: SearchSeatSimple
   }

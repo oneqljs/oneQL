@@ -1,6 +1,4 @@
-import { gql } from 'apollo-server-koa'
-
-const cityTypes = gql`
+const cityTypes = `
   extend type Query {
     city(request: CityRequestInput): City
   }
