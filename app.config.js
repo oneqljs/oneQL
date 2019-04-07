@@ -1,5 +1,5 @@
 module.exports = {
-  redisName: 'xxx',
+  redisName: '',
   xconfig: ['properties'],
   env: 'fws', // support dev, fat, uat, pro
   // 'SOA.Timeout': 100 // [optional] soa全局的timeout，可以被单独调用的timeout覆盖

@@ -12,6 +12,9 @@ import router from './router'
 // 获取动态config，控制生产开关，配置 etc
 // xconfigInit()
 
+const cwd = process.cwd()
+export const appConfig = require(cwd + '/app.config')
+
 let OneQL = (object) => {
   let { schema, ...other } = object
 

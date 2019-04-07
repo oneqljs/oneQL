@@ -19,11 +19,11 @@ if (redisName) {
   })
 
   // 连接redis， 成功后设置标记位
-  redis.connect(err => {
-    if (!err) {
-      redisConnectFlag = true
-    }
-  })
+  // redis.connect(err => {
+  //   if (!err) {
+  //     redisConnectFlag = true
+  //   }
+  // })
 }
 
 // 改成同步get获取， 简化外部调用逻辑
