@@ -1,7 +1,7 @@
 {
     "plugins": ["prism", "-highlight","custom-favicon-new"],
     "pluginsConfig" : {
-        "favicon": "doc/favicon.ico",
-        "appleTouchIconPrecomposed152": "doc/favicon.ico"
+        "favicon": "favicon.ico",
+        "appleTouchIconPrecomposed152": "favicon.ico"
     }
 }
