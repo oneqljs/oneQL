@@ -1,6 +1,5 @@
-<p style="margin:0 auto;text-align: center;">
-<img src="./doc/oneql_text.png" width="300px"/>
-</p>
+<img src="./doc/oneql_text.png" width="300px" style="margin-left: 200px"/>
+
 
 oneQL
 --------
