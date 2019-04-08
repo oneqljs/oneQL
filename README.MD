@@ -11,9 +11,9 @@ book: (https://oneqljs.github.io/oneQL/book/)
 
 快速开始
 ---------
-- clone模板仓库 (后续考虑cli创建)
-- npm install
-- npm run dev
+- npm install oneql-init -g
+- oneql-init project
+- cd project && npm run dev
 
 - 访问：(http://localhost:3600/graphql)
 
