@@ -1,6 +1,6 @@
 {
   "name": "oneql",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
@@ -9,9 +9,18 @@
     "dev": "nodemon",
     "debug": "node --inspect -r ts-node/register src/index.ts",
     "watch": "npm run tsc -- -w",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "publish": "tsc && npm publish"
   },
-  "author": "",
+  "author": "skyweaver213",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneqljs/oneql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oneqljs/oneql/issues"
+  },
+  "homepage": "https://github.com/oneqljs/oneql#readme",
   "license": "ISC",
   "husky": {
     "hooks": {
