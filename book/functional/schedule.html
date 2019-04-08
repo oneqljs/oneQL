@@ -597,6 +597,43 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;">&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</h2>
+<p>todo context</p>
+<p>&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x53EF;&#x80FD;&#x6709;&#x4E00;&#x4E9B;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x7684;&#x9700;&#x6C42;&#xFF0C; &#x4F8B;&#x5982;&#x5B9A;&#x65F6;&#x89E6;&#x53D1;&#x4E00;&#x4E0B;&#x7F13;&#x5B58;&#x751F;&#x6210;&#xFF0C;&#x5B9A;&#x65F6;&#x79EF;&#x5206;&#x7ED3;&#x7B97;&#xFF0C;&#x751F;&#x6210;&#x62A5;&#x8868; &#x7B49;&#x7B49;&#x3002;</p>
+<p>oneQL &#x57FA;&#x4E8E;node-schedule&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x5C01;&#x88C5;&#x4E86;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x7684;&#x914D;&#x7F6E;</p>
+
+<p>&#x63A8;&#x8350;&#x7528;&#x914D;&#x7F6E;</p>
+
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>runSchedule<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./util/schedule&apos;</span>
+
+<span class="token keyword">let</span> jobs <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        interval<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+        task<span class="token punctuation">:</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;task &apos;</span><span class="token punctuation">,</span> now<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        cron<span class="token punctuation">:</span> <span class="token string">&apos;0-59 * * * * *&apos;</span><span class="token punctuation">,</span>
+        task<span class="token punctuation">:</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;task cron &apos;</span><span class="token punctuation">,</span> now<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token function">runSchedule</span><span class="token punctuation">(</span>jobs<span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code class="lang-sh">*    *    *    *    *    *
+&#x252C;    &#x252C;    &#x252C;    &#x252C;    &#x252C;    &#x252C;
+&#x2502;    &#x2502;    &#x2502;    &#x2502;    &#x2502;    &#x2502;
+&#x2502;    &#x2502;    &#x2502;    &#x2502;    &#x2502;    &#x2514; day of week <span class="token punctuation">(</span>0 - 7<span class="token punctuation">)</span> <span class="token punctuation">(</span>0 or 7 is Sun<span class="token punctuation">)</span>
+&#x2502;    &#x2502;    &#x2502;    &#x2502;    &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; month <span class="token punctuation">(</span>1 - 12<span class="token punctuation">)</span>
+&#x2502;    &#x2502;    &#x2502;    &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; day of month <span class="token punctuation">(</span>1 - 31<span class="token punctuation">)</span>
+&#x2502;    &#x2502;    &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; hour <span class="token punctuation">(</span>0 - 23<span class="token punctuation">)</span>
+&#x2502;    &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; minute <span class="token punctuation">(</span>0 - 59<span class="token punctuation">)</span>
+&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; second <span class="token punctuation">(</span>0 - 59, OPTIONAL<span class="token punctuation">)</span>
+</code></pre>
 
                                 
                                 </section>
@@ -636,7 +673,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"定时任务","level":"1.3.5","depth":2,"next":{"title":"[核心功能]","level":"1.4","depth":1,"ref":"","articles":[{"title":"本地开发","level":"1.4.1","depth":2,"path":"utils/dev.md","ref":"utils/dev.md","articles":[]},{"title":"日志功能","level":"1.4.2","depth":2,"path":"utils/xconfig.md","ref":"utils/xconfig.md","articles":[]},{"title":"接入配置系统","level":"1.4.3","depth":2,"path":"utils/xlog.md","ref":"utils/xlog.md","articles":[]},{"title":"缓存功能","level":"1.4.4","depth":2,"path":"utils/redis.md","ref":"utils/redis.md","articles":[]},{"title":"应用部署","level":"1.4.5","depth":2,"path":"utils/redis.md","ref":"utils/redis.md","articles":[]},{"title":"安全","level":"1.4.6","depth":2,"path":"utils/redis.md","ref":"utils/redis.md","articles":[]}]},"previous":{"title":"中间件","level":"1.3.4","depth":2,"path":"functional/middleware.md","ref":"functional/middleware.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"functional/schedule.md","mtime":"2019-03-29T05:43:06.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-29T09:46:10.797Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"定时任务","level":"1.3.5","depth":2,"next":{"title":"[核心功能]","level":"1.4","depth":1,"ref":"","articles":[{"title":"本地开发","level":"1.4.1","depth":2,"path":"utils/dev.md","ref":"utils/dev.md","articles":[]},{"title":"日志功能","level":"1.4.2","depth":2,"path":"utils/xconfig.md","ref":"utils/xconfig.md","articles":[]},{"title":"接入配置系统","level":"1.4.3","depth":2,"path":"utils/xlog.md","ref":"utils/xlog.md","articles":[]},{"title":"缓存功能","level":"1.4.4","depth":2,"path":"utils/redis.md","ref":"utils/redis.md","articles":[]},{"title":"应用部署","level":"1.4.5","depth":2,"path":"utils/redis.md","ref":"utils/redis.md","articles":[]},{"title":"安全","level":"1.4.6","depth":2,"path":"utils/redis.md","ref":"utils/redis.md","articles":[]}]},"previous":{"title":"中间件","level":"1.3.4","depth":2,"path":"functional/middleware.md","ref":"functional/middleware.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight"],"pluginsConfig":{"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"functional/schedule.md","mtime":"2019-04-02T15:41:49.332Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T02:27:41.672Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
