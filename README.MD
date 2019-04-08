@@ -1,4 +1,4 @@
-<img src="./doc/oneql_text.png" width="300px" style="margin-left: 200px"/>
+<img src="./doc/oneql_text_left.png" width="400px" />
 
 
 oneQL
