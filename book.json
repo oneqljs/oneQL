@@ -1,11 +1,11 @@
 {
-    "plugins": ["prism", "-highlight", "favicon"],
+    "plugins": ["favicon", "prism", "-highlight"],
     "pluginsConfig" : {
         "favicon": {
-            "shortcut": "favicon.ico",
-            "bookmark": "favicon.ico",
-            "appleTouch": "favicon.ico"
+            "shortcut": "./favicon.ico",
+            "bookmark": "./favicon.ico",
+            "appleTouch": "./favicon.ico"
         },
-        "appleTouchIconPrecomposed152": "favicon.ico"
+        "appleTouchIconPrecomposed152": "./favicon.ico"
     }
 }
