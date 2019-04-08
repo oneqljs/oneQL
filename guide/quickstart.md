@@ -3,13 +3,13 @@
 
 ```sh
 # step 1
-git clone git@github.com:skyweaver213/oneQL.git
+npm install oneql-init -g
 
 # step 2
-npm install
+oneql-init project
 
 #step 3
-npm run dev
+cd project && npm run dev
 ```
 
 <p>访问：http://localhost:3600/graphql</p>

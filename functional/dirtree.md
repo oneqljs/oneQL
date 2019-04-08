@@ -7,28 +7,23 @@ utils文件夹主要是一些工具模块，这里具体根据业务场景 和�
 ```sh
 src
 ├── api
-│   ├── city.ts
-│   ├── index.ts
-│   └── mockdata
-│       └── city.ts
-├── global.d.ts
+│   ├── city.ts
+│   ├── index.ts
+│   └── mockdata
+│       └── city.ts
+├── app.config.js
 ├── index.ts
+├── middleware
+│   ├── startTime.ts
+│   └── suffix.ts
 ├── resolvers
-│   ├── city.ts
-│   ├── hello.ts
-│   ├── index.ts
-│   └── seatSimple.ts
-├── router
-│   └── index.ts
-├── types
-│   ├── city.ts
-│   ├── hello.ts
-│   ├── index.ts
-│   └── seatSimple.ts
-└── util
-    ├── auth.ts
-    ├── log.ts
-    ├── redis.ts
-    ├── soa.ts
-    └── xconfig.ts
+│   ├── city.ts
+│   ├── hello.ts
+│   ├── index.ts
+│   └── seatSimple.ts
+└── types
+    ├── city.ts
+    ├── hello.ts
+    ├── index.ts
+    └── seatSimple.ts
 ```
