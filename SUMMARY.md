@@ -18,6 +18,8 @@
     * [应用部署](utils/redis.md)
     * [安全](utils/redis.md)
 * [其他接入]
+    * [Sequelize](utils/sequelize.md)
+    * [Prisma](utils/prisma.md)
     * [MySQL](utils/xconfig.md)
     * [MongoDB](utils/xlog.md)
     * [Socket.io](utils/redis.md)
