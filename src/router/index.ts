@@ -16,8 +16,14 @@ const router = new Router()
 //     }
 // })
 
-router.get('/city', async() => {
- 
+router.get('/city', async(ctx) => {
+
+    console.log('city -----')
+
+    ctx.body = {
+        success: 'city get',
+        city: 'aaa bbb'
+    }
 })
 
 export default router
