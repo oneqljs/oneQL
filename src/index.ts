@@ -4,7 +4,9 @@ import * as bodyParser from 'koa-bodyparser'
 import * as cookie from 'koa-cookie'
 import { ApolloServer } from 'apollo-server-koa'
 import { makeExecutableSchema } from 'graphql-tools' // SchemaDirectiveVisitor
-import router from './router'
+const cwd = process.cwd()
+// import router from './router'
+
 // import typeDefs from './types'
 // import resolvers from './resolvers'
 // import { xconfigInit } from './util/xconfig'
@@ -12,15 +14,50 @@ import router from './router'
 // 获取动态config，控制生产开关，配置 etc
 // xconfigInit()
 
+let graphqlPath
+
 import * as path from 'path'
 
-const cwd = process.cwd()
+let router, routerPath
+// 尝试加载项目下的router文件夹
+try {
+  routerPath = path.join(cwd, '/router')
+  router = require(routerPath)
+} catch(e) {
+  routerPath = path.join(__dirname, '/router')
+  router = require(routerPath)
+}
+
+router = router && router.default 
 
 // 如果项目根目录存在app.config 取项目的； 不存在取默认配置； 
 // 根目录app.config 优先级 > oneql默认配置
+const defaultConfigPath = '../app.config'
+const cwdPath = path.resolve(cwd, '../app.config')
+const defaultPath = path.resolve(__dirname,  defaultConfigPath)
 
+let cwdAppConfig, defAppConfig
 
-export const appConfig = require(cwd + '/app.config')
+try {
+  defAppConfig = require(defaultPath)
+} catch(e) {
+  defAppConfig = {}
+}
+
+// 项目根路径appConfig
+try {
+  cwdAppConfig = require(cwdPath)
+} catch(e) {
+  cwdAppConfig = {}
+}
+
+const tempConfig = {
+  ...defAppConfig,
+  ...cwdAppConfig
+}
+
+export const appConfig = tempConfig
+
 
 interface OneQL {
   props: oneqlProps
@@ -29,6 +66,9 @@ interface OneQL {
 interface oneqlProps {
   schema: any
 }
+
+// graphqlPath
+graphqlPath = appConfig.vd + appConfig.graphqlPath
 
 class OneQL {
   constructor(props) {
@@ -108,20 +148,15 @@ class OneQL {
       }
     })
 
-    server.applyMiddleware({ app })
+    server.applyMiddleware({ app, path: graphqlPath })
 
     // todo 404
+    // app.use(async (_ctx, next) => {
+    //   await next()
+    // })
 
-  
-    app.use(async (_ctx, next) => {
-      console.log('after oneql middleware')
-
-      await next()
-    })
-
-
-    const port = 3600
-    const host = 'localhost'
+    const port = appConfig.port || 3600
+    const host = appConfig.host || 'localhost'
   
     app.listen(port, host, () =>
       console.log(`🚀 Server ready at http://${host}:${port}${server.graphqlPath}`)
