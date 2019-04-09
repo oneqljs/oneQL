@@ -14,8 +14,31 @@ book: (https://oneqljs.github.io/oneQL/book/)
 ---------
 - npm install oneql-init -g
 - oneql-init project
-- cd project && npm run dev
+- cd project && npm install && npm run dev
 
+#### 初始化oneQL (模板已自动生成)
+
+```sh
+// src/index.ts
+import oneql from 'oneql'
+
+import typeDefs from './types'
+import resolvers from './resolvers'
+
+new oneql({
+    schema: {
+        typeDefs,
+        resolvers
+    },
+    context: async ({ ctx }) => {
+        return {
+            ctx
+        }
+    }
+})
+```
+
+#### 事例查看:
 - 访问：(http://localhost:3600/graphql)
 
 ```js

@@ -234,7 +234,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="functional/middleware.html">
+        <li class="chapter " data-level="1.3.4" data-path="functional/router.html">
+            
+                <a href="functional/router.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="functional/middleware.html">
             
                 <a href="functional/middleware.html">
             
@@ -247,7 +260,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="functional/schedule.html">
+        <li class="chapter " data-level="1.3.6" data-path="functional/schedule.html">
             
                 <a href="functional/schedule.html">
             
@@ -260,7 +273,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="extend/extend.html">
+        <li class="chapter " data-level="1.3.7" data-path="extend/extend.html">
             
                 <a href="extend/extend.html">
             
@@ -671,10 +684,30 @@ book: (<a href="https://oneqljs.github.io/oneQL/book/" target="_blank">https://o
 <ul>
 <li>npm install oneql-init -g</li>
 <li>oneql-init project</li>
-<li><p>cd project &amp;&amp; npm run dev</p>
-</li>
-<li><p>&#x8BBF;&#x95EE;&#xFF1A;(<a href="http://localhost:3600/graphql" target="_blank">http://localhost:3600/graphql</a>)</p>
-</li>
+<li>cd project &amp;&amp; npm install &amp;&amp; npm run dev</li>
+</ul>
+<h4 id="&#x521D;&#x59CB;&#x5316;oneql-&#x6A21;&#x677F;&#x5DF2;&#x81EA;&#x52A8;&#x751F;&#x6210;">&#x521D;&#x59CB;&#x5316;oneQL (&#x6A21;&#x677F;&#x5DF2;&#x81EA;&#x52A8;&#x751F;&#x6210;)</h4>
+<pre class="language-"><code class="lang-sh">// src/index.ts
+<span class="token function">import</span> oneql from <span class="token string">&apos;oneql&apos;</span>
+
+<span class="token function">import</span> typeDefs from <span class="token string">&apos;./types&apos;</span>
+<span class="token function">import</span> resolvers from <span class="token string">&apos;./resolvers&apos;</span>
+
+new oneql<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    schema: <span class="token punctuation">{</span>
+        typeDefs,
+        resolvers
+    <span class="token punctuation">}</span>,
+    context: async <span class="token punctuation">(</span><span class="token punctuation">{</span> ctx <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            ctx
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="&#x4E8B;&#x4F8B;&#x67E5;&#x770B;">&#x4E8B;&#x4F8B;&#x67E5;&#x770B;:</h4>
+<ul>
+<li>&#x8BBF;&#x95EE;&#xFF1A;(<a href="http://localhost:3600/graphql" target="_blank">http://localhost:3600/graphql</a>)</li>
 </ul>
 <pre class="language-"><code class="lang-js">query <span class="token function">db</span><span class="token punctuation">(</span>$key<span class="token punctuation">:</span> String<span class="token punctuation">,</span> $ext<span class="token punctuation">:</span> <span class="token punctuation">[</span>ExtensionType<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   hello
@@ -764,7 +797,7 @@ book: (<a href="https://oneqljs.github.io/oneQL/book/" target="_blank">https://o
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"[新手指南]","level":"1.2","depth":1,"ref":"","articles":[{"title":"oneQL 是什么？","level":"1.2.1","depth":2,"path":"guide/intro.md","ref":"guide/intro.md","articles":[]},{"title":"oneQL 快速入门","level":"1.2.2","depth":2,"path":"guide/quickstart.md","ref":"guide/quickstart.md","articles":[]},{"title":"oneQL 推荐实践","level":"1.2.3","depth":2,"path":"guide/recommend.md","ref":"guide/recommend.md","articles":[]},{"title":"渐进式开发","level":"1.2.4","depth":2,"path":"functional/progressive.md","ref":"functional/progressive.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["favicon","prism","-highlight"],"pluginsConfig":{"favicon":{"shortcut":"./favicon.ico","bookmark":"./favicon.ico","appleTouch":"./favicon.ico"},"appleTouchIconPrecomposed152":"./favicon.ico","prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-04-08T06:04:16.336Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T13:36:49.216Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"[新手指南]","level":"1.2","depth":1,"ref":"","articles":[{"title":"oneQL 是什么？","level":"1.2.1","depth":2,"path":"guide/intro.md","ref":"guide/intro.md","articles":[]},{"title":"oneQL 快速入门","level":"1.2.2","depth":2,"path":"guide/quickstart.md","ref":"guide/quickstart.md","articles":[]},{"title":"oneQL 推荐实践","level":"1.2.3","depth":2,"path":"guide/recommend.md","ref":"guide/recommend.md","articles":[]},{"title":"渐进式开发","level":"1.2.4","depth":2,"path":"functional/progressive.md","ref":"functional/progressive.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["favicon","prism","-highlight"],"pluginsConfig":{"favicon":{"shortcut":"./favicon.ico","bookmark":"./favicon.ico","appleTouch":"./favicon.ico"},"appleTouchIconPrecomposed152":"./favicon.ico","prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-04-09T07:05:56.178Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-09T07:07:42.485Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

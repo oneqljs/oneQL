@@ -9,6 +9,7 @@
     * [目录结构](functional/dirtree.md)
     * [运行环境](functional/env.md)
     * [配置](functional/config.md)
+    * [路由](functional/router.md)
     * [中间件](functional/middleware.md)
     * [定时任务](functional/schedule.md)
     * [插件](extend/extend.md)
