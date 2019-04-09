@@ -104,7 +104,7 @@ const server = new ApolloServer({
 
 思维图
 --------
-![avatar](./doc/oneQL.png)
+![avatar](./doc/oneQL_n.png)
 
 [npm]: https://img.shields.io/npm/v/oneql.svg
 [npm-url]: https://npmjs.com/package/oneql
