@@ -34,6 +34,6 @@
     * [框架开发](utils/redis.md)
     * [代码风格指南](utils/redis.md)
 * [社区]
-    * [内置插件列表](utils/xconfig.md)
-    * [贡献代码](utils/xlog.md)
-    * [常见问题](utils/redis.md)
+    * [内置插件列表](community/extends.md)
+    * [贡献代码](community/contribution.md)
+    * [常见问题](community/FAQ.md)
