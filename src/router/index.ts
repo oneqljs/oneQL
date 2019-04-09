@@ -1,5 +1,5 @@
 import * as Router from 'koa-router'
-const router = new Router()
+const router: Router = new Router()
 
 // import xUtil from 'xUtil'
 // fake code
