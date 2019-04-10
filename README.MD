@@ -8,6 +8,7 @@ book: (https://oneqljs.github.io/oneQL/book/)
 
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
+[![Downloads][downloads-image]][npm-url]
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?maxAge=2592000)]()
 
 快速开始
@@ -112,3 +113,5 @@ const server = new ApolloServer({
 
 [node]: https://img.shields.io/node/v/oneql.svg
 [node-url]: https://nodejs.org
+
+[downloads-image]: https://img.shields.io/npm/dm/oneql.svg
