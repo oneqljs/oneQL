@@ -29,10 +29,10 @@
     * [TypeScript](other/typescript.md)
     * [静态资源](other/static.md)
 * [进价]
-    * [插件开发](utils/xconfig.md)
-    * [多进程模块增强](utils/xlog.md)
-    * [框架开发](utils/redis.md)
-    * [代码风格指南](utils/redis.md)
+    * [插件开发](advance/plugin.md)
+    * [多进程模块增强](advance/cluster.md)
+    * [框架开发](advance/framework.md)
+    * [代码风格指南](advance/codestyle.md)
 * [社区]
     * [内置插件列表](community/extends.md)
     * [贡献代码](community/contribution.md)
