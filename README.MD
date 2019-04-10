@@ -8,6 +8,7 @@ book: (https://oneqljs.github.io/oneQL/book/)
 
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?maxAge=2592000)]()
 
 快速开始
 ---------
