@@ -15,7 +15,7 @@
     * [插件](extend/extend.md)
 * [核心功能]
     * [本地开发](core/dev.md)
-    * [日志功能](core/log.md)
+    * [日志功能](core/log.md) 
     * [接入配置系统](core/xconfig.md)
     * [缓存功能](core/redis.md)
     * [应用部署](core/publish.md)
