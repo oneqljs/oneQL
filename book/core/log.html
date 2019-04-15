@@ -680,7 +680,38 @@
 <p>&#x5EFA;&#x8BAE;&#x6253;&#x901A;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF;&#xFF0C; &#x4F8B;&#x5982;es&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF;&#xFF0C;&#x65B9;&#x4FBF;&#x65E5;&#x5FD7;&#x5206;&#x6790;&#xFF0C;&#x95EE;&#x9898;&#x5B9A;&#x4F4D;&#x7B49;&#x3002;</p>
 
 
-<p>// todo api</p>
+<h2 id="&#x65E5;&#x5FD7;&#x5206;&#x7C7B;">&#x65E5;&#x5FD7;&#x5206;&#x7C7B;</h2>
+<pre class="language-"><code class="lang-js"><span class="token keyword">interface</span> <span class="token class-name">Logger</span> <span class="token punctuation">{</span>
+    warn<span class="token punctuation">:</span> Function<span class="token punctuation">,</span>
+    error<span class="token punctuation">:</span> Function<span class="token punctuation">,</span>
+    info<span class="token punctuation">:</span> Function<span class="token punctuation">,</span>
+    debug<span class="token punctuation">:</span> Function
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Log <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;oneQL/util&apos;</span>
+
+Log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>objValue<span class="token punctuation">)</span>
+
+<span class="token comment">// objValue&#x5B57;&#x6BB5;</span>
+<span class="token keyword">interface</span> <span class="token class-name">objValue</span> <span class="token punctuation">{</span>
+    serviceName<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    serviceCode<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    message<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    custom<span class="token punctuation">:</span> any
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x6253;&#x901A;&#x5185;&#x90E8;&#x9879;&#x76EE;">&#x6253;&#x901A;&#x5185;&#x90E8;&#x9879;&#x76EE;</h4>
+<p>app.config.js &#x6587;&#x4EF6;&#x91CC; &#x914D;&#x7F6E; logConnect&#x65B9;&#x6CD5;&#xFF0C; &#x53C2;&#x6570;obj&#x4E3A;&#x65E5;&#x5FD7;&#x8BE6;&#x7EC6;&#x6570;&#x636E;</p>
+
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x6253;&#x901A;&#x5185;&#x90E8;&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF;, app.config.js</span>
+logConnect<span class="token punctuation">:</span> <span class="token punctuation">(</span>objValue<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+    * fake code
+    * clog.info(objValue.key, objValue.customString)  // object String
+    */</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
                                 
                                 </section>
@@ -724,7 +755,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"日志功能","level":"1.4.2","depth":2,"next":{"title":"接入配置系统","level":"1.4.3","depth":2,"path":"core/xconfig.md","ref":"core/xconfig.md","articles":[]},"previous":{"title":"本地开发","level":"1.4.1","depth":2,"path":"core/dev.md","ref":"core/dev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["favicon","prism","-highlight"],"pluginsConfig":{"favicon":{"shortcut":"./favicon.ico","bookmark":"./favicon.ico","appleTouch":"./favicon.ico"},"appleTouchIconPrecomposed152":"./favicon.ico","prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core/log.md","mtime":"2019-04-15T08:21:07.587Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-15T08:21:40.349Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"日志功能","level":"1.4.2","depth":2,"next":{"title":"接入配置系统","level":"1.4.3","depth":2,"path":"core/xconfig.md","ref":"core/xconfig.md","articles":[]},"previous":{"title":"本地开发","level":"1.4.1","depth":2,"path":"core/dev.md","ref":"core/dev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["favicon","prism","-highlight"],"pluginsConfig":{"favicon":{"shortcut":"./favicon.ico","bookmark":"./favicon.ico","appleTouch":"./favicon.ico"},"appleTouchIconPrecomposed152":"./favicon.ico","prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core/log.md","mtime":"2019-04-15T09:24:20.320Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-15T09:24:35.111Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
