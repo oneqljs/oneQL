@@ -1,9 +1,16 @@
 // import xUtil from 'xUtil'
-// fake code
+
+import { appConfig } from '../index'
+// fake code 打通内部日志系统
 const xUtil = {
     log: {
-        custom: (arg: any): void => {
-            console.log('arg -- ', arg)
+        custom: (obj: any): void => {
+            console.log('obj -- ', obj)
+
+            // 请调用 打通内部日志系统方法 ？
+            if (appConfig.logConnect)
+              appConfig.logConnect(obj)
+
         }
     }
 }
@@ -31,6 +38,10 @@ const Log = () => {
         // const { user } = ctx || {} as UserContext
         const { referrer } = ctx
         const { uid = '' } = ctx.user || {}
+
+        // 写文件信息 (存放在站点上)
+        // todo
+
         
         xUtil.log.custom({
           type,

@@ -7,5 +7,13 @@ module.exports = {
   host: '', // host 默认为localhost
   vd: '', // 服务器拦截的虚拟路径
   graphqlPath: '', // graphql 拦截的路径
-  middleWare: []
+  // 中间件配置
+  middleWare: [],
+  // 打通内部日志系统
+  logConnect: objValue => {
+    /**
+     * fake code
+     * clog.info(objValue.key, objValue.customString)  // object String
+     */
+  }
 }
