@@ -10,7 +10,8 @@
     "debug": "node --inspect -r ts-node/register src/index.ts",
     "watch": "npm run tsc -- -w",
     "tsc": "tsc",
-    "publish": "tsc && npm publish"
+    "publish": "tsc && npm publish",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "author": "skyweaver213",
   "repository": {
@@ -67,6 +68,9 @@
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
     "ts-node": "^8.0.3",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.3.3333"
   },
   "engines": {
