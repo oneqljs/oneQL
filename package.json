@@ -29,8 +29,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,css}": [
+    "*.{ts,js,css}": [
       "prettier --write",
+      "tslint",
       "eslint",
       "git add"
     ]
@@ -53,6 +54,7 @@
     "@types/koa-bodyparser": "^4.2.2",
     "@types/koa-router": "^7.0.40",
     "@types/node": "^11.10.5",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "eslint-config-prettier": "^4.1.0",
@@ -71,7 +73,8 @@
     "tslint": "^5.15.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "typescript-eslint-parser": "^22.0.0"
   },
   "engines": {
     "npm": ">=6",

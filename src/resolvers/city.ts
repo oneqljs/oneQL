@@ -2,35 +2,32 @@
 import cityMockData from '../api/mockdata/city'
 
 interface CityRequest {
-  key?: String
-  ext?: String
+  key?: string
+  ext?: string
 }
 
 const cityResolvers = {
   Query: {
     city: async (root, arg, context) => {
       const { key, ext }: CityRequest = arg.request || {}
-      console.log('key ', key, ' ext ', ext)
 
-          console.log('root: ', root, ' arg: ', arg, ' context: ', context)
       let response
       try {
-        var param = {
-          key,
-          ext
-        }
-        console.log('param - ', param)
+        // fake code
+        // const param = {
+        //   key,
+        //   ext
+        // }
         // response = await SOA('13555', 'airportFuzzySearch', param)
 
         response = cityMockData
-
       } catch (error) {
         response = {
           error
         }
       }
-      if (response.dataInfo) {
-      }
+      // if (response.dataInfo) {
+      // }
 
       return response
     }

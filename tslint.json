@@ -1,4 +1,7 @@
 {
+    "rules": {
+        "interface-name" : [true, "never-prefix"]
+    },
     "extends": [
       "tslint:latest",
       "tslint-eslint-rules",
