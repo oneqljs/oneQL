@@ -1,5 +1,4 @@
 // import xUtil from 'xUtil'
-
 import { appConfig } from '../index'
 // fake code 打通内部日志系统
 const xUtil = {
