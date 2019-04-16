@@ -12,7 +12,7 @@ const cityResolvers = {
       const { key, ext }: CityRequest = arg.request || {}
       console.log('key ', key, ' ext ', ext)
 
-      console.log('root: ', root, ' arg: ', arg, ' context: ', context)
+          console.log('root: ', root, ' arg: ', arg, ' context: ', context)
       let response
       try {
         var param = {
