@@ -26,9 +26,9 @@ const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
     const isExist = fs.existsSync(path.resolve(cwd, './dist/index.js'))
     let result = null
     if (isExist) {
-      result = spawn.sync('node', [path.resolve(cwd, './dist/index.js')])
+      result = spawn.sync('node', [path.resolve(cwd, './dist/index.js')], { stdio: 'inherit' })
     } else {
-      result = spawn.sync('node', [path.resolve(cwd, './dist/src/index.js')])
+      result = spawn.sync('node', [path.resolve(cwd, './dist/src/index.js')], { stdio: 'inherit' })
     }
   }
 }
