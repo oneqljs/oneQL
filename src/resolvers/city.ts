@@ -8,7 +8,7 @@ interface CityRequest {
 
 const cityResolvers = {
   Query: {
-    city: async (root, arg, context) => {
+    city: async (_root, arg, _context) => {
       const { key, ext }: CityRequest = arg.request || {}
 
       let response
@@ -20,7 +20,13 @@ const cityResolvers = {
         // }
         // response = await SOA('13555', 'airportFuzzySearch', param)
 
-        response = cityMockData
+        const res = {
+          ...cityMockData,
+          key,
+          ext
+        }
+
+        response = res
       } catch (error) {
         response = {
           error
