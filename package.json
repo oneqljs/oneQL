@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
-    "start": "tsc && node  dist/src/index.js NODE_ENV=production",
+    "start": "tsc && node dist/src/index.js NODE_ENV=production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
     "debug": "node --inspect -r ts-node/register src/index.ts",
@@ -29,15 +29,15 @@
     }
   },
   "lint-staged": {
-    "*.{ts,js,css}": [
+    "*.{js,css}": [
       "prettier --write",
-      "tslint",
       "eslint",
       "git add"
     ]
   },
   "dependencies": {
     "apollo-server-koa": "^2.4.2",
+    "cross-spawn": "^6.0.5",
     "graphql": "^14.1.1",
     "graphql-resolvers": "^0.3.2",
     "graphql-tools": "^4.0.4",
@@ -86,5 +86,8 @@
     "dist",
     "util",
     "router"
-  ]
+  ],
+  "bin": {
+    "oneql": "./bin/oneql-scripts.js"
+  }
 }
