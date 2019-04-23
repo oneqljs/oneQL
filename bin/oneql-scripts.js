@@ -23,12 +23,19 @@ const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
   }
   // 运行代码
   CommanderDoing.prototype.start = function() {
-    const isExist = fs.existsSync(path.resolve(cwd, './dist/index.js'))
+    const tsc_path = path.resolve(cwd, './dist/index.js')
+    const tsc_src_path = path.resolve(cwd, './dist/src/index.js')
+    const tscIsExist = fs.existsSync(tsc_path)
+    const tscSrcIsExist = fs.existsSync(tsc_src_path)
     let result = null
-    if (isExist) {
-      result = spawn.sync('node', [path.resolve(cwd, './dist/index.js')], { stdio: 'inherit' })
+    if (tscIsExist) {
+      process.chdir('./dist')
+      result = spawn.sync('node', [tsc_path], { stdio: 'inherit' })
+    } else if (tscSrcIsExist) {
+      process.chdir('./dist/src')
+      result = spawn.sync('node', [tsc_src_path], { stdio: 'inherit' })
     } else {
-      result = spawn.sync('node', [path.resolve(cwd, './dist/src/index.js')], { stdio: 'inherit' })
+      throw new Error(`It's not package yet, please use 'dist' as packageName`)
     }
   }
 }
