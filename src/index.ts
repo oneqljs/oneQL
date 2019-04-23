@@ -4,6 +4,7 @@ import * as bodyParser from 'koa-bodyparser'
 import * as cookie from 'koa-cookie'
 import { ApolloServer } from 'apollo-server-koa'
 import { makeExecutableSchema } from 'graphql-tools' // SchemaDirectiveVisitor
+import { findMiddleAndRequire } from '../src/util/methods'
 const cwd = process.cwd()
 // import router from './router'
 
@@ -108,17 +109,20 @@ class OneQL {
 
     middleWare.forEach( item => {
       let { name, options = {} } = item
-      let pa = path.join(cwd, '/middleware/' + name)
+      let middleModel = findMiddleAndRequire(cwd, name, options.disable)
+      if (middleModel) app.use(middleModel)
+      console.log('middleModel', middleModel)
+      // let pa = path.join(cwd, '/middleware/' + name)
 
-      // 是否关闭中间件， 默认开启
-      if (!options.disable) {
-        // todo 文件是否存在
-        let middleModel = require(pa)
+      // // 是否关闭中间件， 默认开启
+      // if (!options.disable) {
+      //   // todo 文件是否存在
+      //   let middleModel = require(pa)
 
-        if(middleModel)
-        // 执行对应的中间件
-        app.use(middleModel)
-      }
+      //   if(middleModel)
+      //   // 执行对应的中间件
+      //   app.use(middleModel)
+      // }
     })
 
     app
@@ -135,17 +139,19 @@ class OneQL {
 
     middleWareAfter.forEach( item => {
       let { name, options = {} } = item
-      let pa = path.join(cwd, '/middleware/' + name)
+      let middleModel = findMiddleAndRequire(cwd, name, options.disable)
+      if (middleModel) app.use(middleModel)
+      // let pa = path.join(cwd, '/middleware/' + name)
 
-      // 是否关闭中间件， 默认开启
-      if (!options.disable) {
-        // todo 文件是否存在
-        let middleModel = require(pa)
+      // // 是否关闭中间件， 默认开启
+      // if (!options.disable) {
+      //   // todo 文件是否存在
+      //   let middleModel = require(pa)
 
-        if(middleModel)
-        // 执行对应的中间件
-        app.use(middleModel)
-      }
+      //   if(middleModel)
+      //   // 执行对应的中间件
+      //   app.use(middleModel)
+      // }
     })
 
     server.applyMiddleware({ app, path: graphqlPath })
