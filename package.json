@@ -1,6 +1,6 @@
 {
   "name": "oneql",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "debug": "node --inspect -r ts-node/register src/index.ts",
     "watch": "npm run tsc -- -w",
     "tsc": "tsc",
-    "publish": "tsc && npm publish",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "author": "skyweaver213",
