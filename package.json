@@ -1,6 +1,6 @@
 {
   "name": "oneql",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
@@ -73,7 +73,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.3.3333",
-    "typescript-eslint-parser": "^22.0.0"
+    "typescript-eslint-parser": "^22.0.0",
+    "yargs": "^13.2.2"
   },
   "engines": {
     "npm": ">=6",

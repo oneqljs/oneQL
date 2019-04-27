@@ -6,6 +6,10 @@ import { ApolloServer } from 'apollo-server-koa'
 import { makeExecutableSchema } from 'graphql-tools' // SchemaDirectiveVisitor
 import { findMiddleAndRequire } from '../src/util/methods'
 const cwd = process.cwd()
+const yargs = require('yargs')
+const argv = yargs.argv
+const nodeEnv = argv.NODE_ENV
+
 // import router from './router'
 
 // import typeDefs from './types'
@@ -20,12 +24,15 @@ let graphqlPath
 import * as path from 'path'
 
 let router, routerPath
+// 区分是开发模式， 还是发布模式
+let runPath = nodeEnv === 'development' ? 'src' : 'dist'
+
 // 尝试加载项目下的router文件夹
 try {
-  routerPath = path.join(cwd, '/router')
+  routerPath = path.join(cwd, runPath, '/router')
   router = require(routerPath)
 } catch(e) {
-  routerPath = path.join(__dirname, '/router')
+  routerPath = path.join(cwd, runPath, 'src/router')
   router = require(routerPath)
 }
 
