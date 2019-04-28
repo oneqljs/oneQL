@@ -10,6 +10,8 @@ export const currying = function(...args) {
   }
 }
 
+
+// TODO 区分生产模式还是开发模式， js or ts
 const exists = function(root, fileName, name) {
   let dir_path = join(root, `/${fileName}/${name}.js`)
   let dir_src_path = join(root, `/src/${fileName}/${name}.js`)
