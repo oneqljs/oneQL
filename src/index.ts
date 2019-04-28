@@ -38,10 +38,12 @@ try {
 
 router = router && router.default 
 
+const appConfigPath = nodeEnv === 'development' ? '' : '../'
+
 // 如果项目根目录存在app.config 取项目的； 不存在取默认配置； 
 // 根目录app.config 优先级 > oneql默认配置
 const defaultConfigPath = '../app.config'
-const cwdPath = path.resolve(cwd, 'app.config')
+const cwdPath = path.resolve(cwd, appConfigPath + 'app.config')
 const defaultPath = path.resolve(__dirname,  defaultConfigPath)
 
 console.log('cwdPath ', cwdPath ,  ' defaultPath ', defaultPath)
