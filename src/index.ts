@@ -25,7 +25,7 @@ import * as path from 'path'
 
 let router, routerPath
 // 区分是开发模式， 还是发布模式
-let runPath = nodeEnv === 'development' ? 'src' : 'dist'
+let runPath = nodeEnv === 'development' ? 'src' : ''
 
 // 尝试加载项目下的router文件夹
 try {
