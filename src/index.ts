@@ -25,7 +25,7 @@ import * as path from 'path'
 
 let router, routerPath
 // 区分是开发模式， 还是发布模式
-let runPath = nodeEnv === 'development' ? 'src' : ''
+let runPath = nodeEnv === 'development' ? 'src' : 'dist'
 
 // 尝试加载项目下的router文件夹
 try {
@@ -38,7 +38,7 @@ try {
 
 router = router && router.default 
 
-const appConfigPath = nodeEnv === 'development' ? '' : '../'
+const appConfigPath = nodeEnv === 'development' ? '' : 'dist/'
 
 // 如果项目根目录存在app.config 取项目的； 不存在取默认配置； 
 // 根目录app.config 优先级 > oneql默认配置

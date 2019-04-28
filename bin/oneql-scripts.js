@@ -29,10 +29,10 @@ const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
     const tscSrcIsExist = fs.existsSync(tsc_src_path)
     let result = null
     if (tscIsExist) {
-      process.chdir('./dist')
+      process.chdir('./')
       result = spawn.sync('node', [tsc_path], { stdio: 'inherit' })
     } else if (tscSrcIsExist) {
-      process.chdir('./dist/src')
+      process.chdir('./')
       result = spawn.sync('node', [tsc_src_path], { stdio: 'inherit' })
     } else {
       throw new Error(`It's not package yet, please use 'dist' as packageName`)
