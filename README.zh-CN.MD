@@ -11,13 +11,13 @@ book: (https://oneqljs.github.io/oneQL/book/)
 [![Downloads][downloads-image]][npm-url]
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?maxAge=2592000)]()
 
-Getting Started
+快速开始
 ---------
 - npm install oneql-init -g
 - oneql-init project
 - cd project && npm install && npm run dev
 
-#### Init oneQL (oneql-init create boilerplate)
+#### 初始化oneQL (模板已自动生成)
 
 ```sh
 // src/index.ts
@@ -39,8 +39,8 @@ new oneql({
 })
 ```
 
-#### Example:
-- Open：(http://localhost:3600/graphql)
+#### 事例查看:
+- 访问：(http://localhost:3600/graphql)
 
 ```js
 query db($key: String, $ext: [ExtensionType]){
@@ -83,17 +83,17 @@ query simple{
 - 每一个schema具体数据实现，如果涉及请求，建议api文件夹里建一个文件处理逻辑
 
 
-Util
+Util 功能
 ------------
 + util提供了soa请求封装，如自动处理埋点信息；
 + 提供xconfig集成；
 + 提供redis方法集成
 + 提供log方法集成
 
-Production Environment
+生产模式
 -------
-- close graphlQL playground
-- app.config.js, env=prod // close 
+- 需要关闭graphlQL 调试工具
+- 根据package.json , env变量 判断prod 或者只dev和fat环境开启
 
 ```js
 const server = new ApolloServer({
@@ -104,7 +104,7 @@ const server = new ApolloServer({
 })
 ```
 
-Mind map
+思维图
 --------
 ![avatar](./doc/oneQL_n.png)
 
@@ -115,7 +115,3 @@ Mind map
 [node-url]: https://nodejs.org
 
 [downloads-image]: https://img.shields.io/npm/dm/oneql.svg
-
-License
-------
-MIT
