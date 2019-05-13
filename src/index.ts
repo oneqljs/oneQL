@@ -32,8 +32,16 @@ try {
   routerPath = path.join(cwd, runPath, '/router')
   router = require(routerPath)
 } catch(e) {
-  routerPath = path.join(cwd, runPath, 'src/router')
-  router = require(routerPath)
+
+  console.log('routerPath error ', e)
+
+  try {
+    routerPath = path.join(cwd, runPath, 'src/router')
+    router = require(routerPath)
+  } catch(_e) {
+    console.log('routerPath error _e ', e)
+  }
+
 }
 
 router = router && router.default 
