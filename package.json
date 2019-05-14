@@ -1,6 +1,6 @@
 {
   "name": "oneql",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
@@ -85,7 +85,8 @@
     "bin",
     "dist",
     "util",
-    "router"
+    "router",
+    "app.config.js"
   ],
   "bin": {
     "oneql": "./bin/oneql-scripts.js"
