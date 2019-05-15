@@ -2,6 +2,10 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 
+const yargs = require('yargs');
+const argv = yargs.argv;
+const nodeEnv = argv.NODE_ENV;
+
 export const currying = function(...args) {
   let fun = args.pop()
   return function(...args_send) {
@@ -13,14 +17,15 @@ export const currying = function(...args) {
 
 // TODO 区分生产模式还是开发模式， js or ts
 const exists = function(root, fileName, name) {
-  let dir_path = join(root, `/${fileName}/${name}.js`)
-  let dir_src_path = join(root, `/src/${fileName}/${name}.js`)
+  let suffix = nodeEnv === 'development' ? '.ts' : '.js'
+  let dir_path = join(root, `/${fileName}/${name}${suffix}`)
+  let dir_src_path = join(root, `/src/${fileName}/${name}${suffix}`)
   let dirExist = existsSync(dir_path)
   let dir_src_exist = existsSync(dir_src_path)
   if (dirExist) {
     return dir_path
   } else if (dir_src_exist) {
-    return dir_src_exist
+    return dir_src_path
   } else {
     return false
   }
@@ -38,7 +43,7 @@ export const findMiddleAndRequire = function(root, name, isused) {
     `)
   } else if (typeof _existsMiddle === 'string') {
     if (isused === undefined || isused) {
-      return require(_existsMiddle)
+      return require(_existsMiddle.replace(/\.(ts|js)/, ''))
     } else {
       return false
     }
