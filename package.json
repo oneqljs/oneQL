@@ -39,7 +39,7 @@
     "cross-spawn": "^6.0.5",
     "graphql": "14.1.1",
     "graphql-resolvers": "0.3.2",
-    "graphql-tools": "4.0.4",
+    "graphql-tools": "5.0.0-rc.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-cookie": "^1.0.0",
