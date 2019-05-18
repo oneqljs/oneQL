@@ -121,7 +121,7 @@ class OneQL {
       // }
     })
   
-    const app = new Koa()
+    let app = new Koa()
 
     // before oneql default middleware, custom middleware
     let middleWare = appConfig.middleWare || []
@@ -174,6 +174,19 @@ class OneQL {
     })
 
     server.applyMiddleware({ app, path: graphqlPath })
+
+    // 启动socket
+    if (appConfig && appConfig.socket) {
+        app = require('http').createServer(app.callback());
+        const io = require('socket.io')(app);
+        io.on('connection', () => { 
+            /* … */ 
+            console.log('oneql socket connection ------ ')
+        })
+
+        // 暴露io 和app 供外部函数使用
+        appConfig.socketFun && appConfig.socketFun(io, app)
+    }
 
     // todo 404
     // app.use(async (_ctx, next) => {
