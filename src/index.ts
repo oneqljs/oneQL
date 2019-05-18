@@ -179,13 +179,15 @@ class OneQL {
     if (appConfig && appConfig.socket) {
         app = require('http').createServer(app.callback());
         const io = require('socket.io')(app);
-        io.on('connection', () => { 
+        io.on('connection', (socket) => { 
             /* … */ 
             console.log('oneql socket connection ------ ')
+
+            // 暴露io 和app 供外部函数使用
+            appConfig.socketFun && appConfig.socketFun(socket, app)
         })
 
-        // 暴露io 和app 供外部函数使用
-        appConfig.socketFun && appConfig.socketFun(io, app)
+     
     }
 
     // todo 404
