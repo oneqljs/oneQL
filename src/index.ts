@@ -31,20 +31,20 @@ let runPath = nodeEnv === 'development' ? 'src' : 'dist'
 try {
   routerPath = path.join(cwd, runPath, '/router')
   router = require(routerPath)
-} catch(e) {
+} catch (e) {
 
   console.log('routerPath error ', e)
 
   try {
     routerPath = path.join(cwd, runPath, 'src/router')
     router = require(routerPath)
-  } catch(_e) {
+  } catch (_e) {
     console.log('routerPath error _e ', e)
   }
 
 }
 
-router = router && router.default 
+router = router && router.default
 
 const appConfigPath = nodeEnv === 'development' ? '' : 'dist/'
 
@@ -52,22 +52,22 @@ const appConfigPath = nodeEnv === 'development' ? '' : 'dist/'
 // 根目录app.config 优先级 > oneql默认配置
 const defaultConfigPath = '../app.config'
 const cwdPath = path.resolve(cwd, appConfigPath + 'app.config')
-const defaultPath = path.resolve(__dirname,  defaultConfigPath)
+const defaultPath = path.resolve(__dirname, defaultConfigPath)
 
-console.log('cwdPath ', cwdPath ,  ' defaultPath ', defaultPath)
+console.log('cwdPath ', cwdPath, ' defaultPath ', defaultPath)
 
 let cwdAppConfig, defAppConfig
 
 try {
   defAppConfig = require(defaultPath)
-} catch(e) {
+} catch (e) {
   defAppConfig = {}
 }
 
 // 项目根路径appConfig
 try {
   cwdAppConfig = require(cwdPath)
-} catch(e) {
+} catch (e) {
   cwdAppConfig = {}
 }
 
@@ -120,13 +120,13 @@ class OneQL {
       //   }
       // }
     })
-  
+
     let app = new Koa()
 
     // before oneql default middleware, custom middleware
     let middleWare = appConfig.middleWare || []
 
-    middleWare.forEach( item => {
+    middleWare.forEach(item => {
       let { name, options = {} } = item
       let middleModel = findMiddleAndRequire(cwd, name, options.disable)
       if (middleModel) app.use(middleModel)
@@ -150,13 +150,15 @@ class OneQL {
       .use(bodyParser())
       .use(router.routes())
       .use(router.allowedMethods())
- 
+
+    // app操作
+    appConfig.secretApp && appConfig.secretApp(app)
 
     // after oneql default middleware, custom middleware
 
     let middleWareAfter = appConfig.middleWareAfter || []
 
-    middleWareAfter.forEach( item => {
+    middleWareAfter.forEach(item => {
       let { name, options = {} } = item
       let middleModel = findMiddleAndRequire(cwd, name, options.disable)
       if (middleModel) app.use(middleModel)
@@ -177,17 +179,17 @@ class OneQL {
 
     // 启动socket
     if (appConfig && appConfig.socket) {
-        app = require('http').createServer(app.callback());
-        const io = require('socket.io')(app);
-        io.on('connection', (socket) => { 
-            /* … */ 
-            console.log('oneql socket connection ------ ')
+      app = require('http').createServer(app.callback());
+      const io = require('socket.io')(app);
+      io.on('connection', (socket) => {
+        /* … */
+        console.log('oneql socket connection ------ ')
 
-            // 暴露io 和app 供外部函数使用
-            appConfig.socketFun && appConfig.socketFun(socket, app)
-        })
+        // 暴露io 和app 供外部函数使用
+        appConfig.socketFun && appConfig.socketFun(socket, app)
+      })
 
-     
+
     }
 
     // todo 404
@@ -197,11 +199,11 @@ class OneQL {
 
     const port = appConfig.port || 3600
     const host = appConfig.host || 'localhost'
-  
+
     app.listen(port, host, () =>
       console.log(`🚀 Server ready at http://${host}:${port}${server.graphqlPath}`)
     )
-  
+
   }
 }
 
